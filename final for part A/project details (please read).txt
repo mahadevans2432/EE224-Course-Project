@@ -2,8 +2,8 @@
 
 The team members for this submission are:
 1. Aneesh Bapat, roll no: 190260006
-2. Drishti Baruah, roll no: 190260027
-3. Mahadevan Subramanian, roll no: 190260019
+2. Drishti Baruah, roll no: 190260019
+3. Mahadevan Subramanian, roll no: 190260027
 4. Sachin Teli, roll no: 190260042
 
 In the subtraction part we have considered it to be b-a for calculating the result.
