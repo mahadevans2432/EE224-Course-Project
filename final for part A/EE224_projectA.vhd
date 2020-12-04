@@ -1,7 +1,7 @@
 --Team members:
 --1. Aneesh Bapat, roll no: 190260006
---2. Drishti Baruah, roll no: 190260027
---3. Mahadevan Subramanian, roll no: 190260019
+--2. Drishti Baruah, roll no: 190260019
+--3. Mahadevan Subramanian, roll no: 190260027
 --4. Sachin Teli, roll no: 190260042
 -- Note: the subtraction is assumed as b-a 
 
