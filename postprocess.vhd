@@ -9,9 +9,9 @@ architecture postproc of postprocess is
 signal carryshift: bit_vector(15 downto 0);
 
 component XORgate15 is
-port( a_in : in bit_vector(15 downto 0);
-		b_in : in bit_vector(15 downto 0);
-		outvec : out bit_vector(15 downto 0));
+port( A : in bit_vector(15 downto 0);
+		B : in bit_vector(15 downto 0);
+		C : out bit_vector(15 downto 0));
 end component;
 
 begin
