@@ -1,25 +1,3 @@
-entity ANDgate15 is 
-port( a_in : in bit_vector(15 downto 0);
-		b_in : in bit_vector(15 downto 0);
-		outvec : out bit_vector(15 downto 0));
-end entity ANDgate15;
-
-architecture andbehaviour of ANDgate15 is 
-begin
-outvec <= a_in AND b_in ;
-end andbehaviour;
-
-entity XORgate15 is 
-port( a_in : in bit_vector(15 downto 0);
-		b_in : in bit_vector(15 downto 0);
-		outvec : out bit_vector(15 downto 0));
-end entity XORgate15;
-
-architecture xorbehaviour of XORgate15 is 
-begin
-outvec <= a_in XOR b_in ;
-end xorbehaviour;
-
 entity preliminary is
 port( S0: in bit;
 		a : in bit_vector(15 downto 0);

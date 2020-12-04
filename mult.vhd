@@ -1,27 +1,41 @@
-entity ANDgate is
-port( A, B: in bit; C: out bit);
-end ANDgate;
+entity ANDgate15 is 
+port( A : in bit_vector(15 downto 0);
+		B : in bit_vector(15 downto 0);
+		C : out bit_vector(15 downto 0));
+end entity ANDgate15;
 
-architecture andarc of ANDgate is
+architecture andbehaviour of ANDgate15 is 
 begin
-C <= A and B;
-end andarc;
+C <= A AND B ;
+end andbehaviour;
 
-entity NOTgate is
-port( A: in bit; B: out bit);
+entity XORgate15 is 
+port( A : in bit_vector(15 downto 0);
+		B: in bit_vector(15 downto 0);
+		C : out bit_vector(15 downto 0));
+end entity XORgate15;
+
+architecture xorbehaviour of XORgate15 is 
+begin
+C <= A XOR B ;
+end xorbehaviour;
+
+entity NOTgate15 is
+port( A: in bit_vector(15 downto 0);
+		B: out bit_vector(15 downto 0));
 end NOTgate;
 
-architecture notarc of NOTgate is
+architecture notarc of NOTgate15 is
 begin
 B <= not A;
 end notarc;
 
-entity ORgate is
-port( A, B: in bit;
- C: out bit);
+entity ORgate15 is
+port( A, B: in bit_vector(15 downto 0);
+		C: out bit_vector(15 downto 0));
 end ORgate;
 
-architecture orarc of ORgate is
+architecture orarc of ORgate15 is
 begin
 C <= A or B;
 end orarc;
@@ -29,29 +43,40 @@ end orarc;
 
 entity mult is
 port (
-		I0: in bit;
-		I1: in bit;
+		I0: in bit_vector(15 downto 0);
+		I1: in bit_vector(15 downto 0);
 		S: in bit;
-		O: out bit);
+		O: out bit_vector(15 downto 0));
 end mult;
 
 architecture struct of mult is
-component ANDgate
-		port(A,B:in bit;
-				C: out bit);
-	end component;
-component ORgate
-		port(A,B:in bit;
-				C: out bit);
-	end component;
-component NOTgate
-		port(A:in bit;
-				B: out bit);
-	end component;
-signal P,Q,R: bit;
+
+component ANDgate15
+port(A,B:in bit_vector(15 downto 0);
+	  C: out bit_vector(15 downto 0));
+end component;
+
+component ORgate15
+port(A,B:in bit_vector(15 downto 0);
+	  C: out bit_vector(15 downto 0));
+end component;
+
+component NOTgate15
+port(A:in bit_vector(15 downto 0);
+	  B: out bit_vector(15 downto 0));
+end component;
+
+signal S_vec,P,Q,R: bit_vector(15 downto 0);
+
 begin
-		notcomp: NOTgate port map (S,P);
-		andcomp1: ANDgate port map (I0,P,Q);
-		andcomp2: ANDgate port map (I1,S,R);
-		orcomp: ORgate port map (Q,R,O);
+makeS: 
+cin_assign:
+for i in 0 to 15 generate
+	S_vec(i) <= S;
+end generate;
+
+notcomp: NOTgate15 port map (S_vec,P);
+andcomp1: ANDgate15 port map (I0,P,Q);
+andcomp2: ANDgate15 port map (I1,S_vec,R);
+orcomp: ORgate15 port map (Q,R,O);
 end struct;
