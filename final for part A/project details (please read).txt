@@ -1,0 +1,14 @@
+# EE224-Course-Project A
+
+The team members for this submission are:
+1. Aneesh Bapat, roll no: 190260006
+2. Drishti Baruah, roll no: 190260027
+3. Mahadevan Subramanian, roll no: 190260019
+4. Sachin Teli, roll no: 190260042
+
+In the subtraction part we have considered it to be b-a for calculating the result.
+
+The testbench code has expected output commented for each input.
+Since it was not clear to fit in one screenshot there are two screenshots for testbench waveforms.
+
+Thank you.
